@@ -68,6 +68,18 @@ class Pays
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+        // Read - Obtenir un pays par son ID
+        public static function getByCountry($id)
+        {
+            $database = new Database();
+            $db = $database->connect();
+            $sql = "SELECT * FROM pays WHERE id_continent_fk = ?";
+            $stmt = $db->prepare($sql);
+            $stmt->execute([$id]);
+            $database->disconnect();
+            return $stmt;
+        }
+
     // Update - Mettre à jour un pays
     public function update()
     {
@@ -102,6 +114,7 @@ class Pays
         $database->disconnect();
         return $result;
     }
+
 }
 
 
