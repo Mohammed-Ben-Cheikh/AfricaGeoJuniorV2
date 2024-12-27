@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFRINOVA</title>
+    <title>WORDLY</title>
     <link rel="stylesheet" href="../../../public/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
@@ -33,30 +33,29 @@
                     Us</a>
             </div>
         </div>
-        <h1 class="font-bold text-white  text-2xl py-4 text-center mt-4 mb-4 ">Add Country Information</h1>
+        <h1 class="font-bold text-white  text-2xl py-4 text-center mt-4 mb-4 ">Add Continent Informations</h1>
         <section class="pb-20 ">
             <form class="flex flex-col gap-4  mx-auto w-full md:w-[800px] bg-gray-50 p-8  rounded shadow" method="POST">
-                <label for="country-name" class="font-semibold">Country Name:</label>
-                <input type="text" name="country_name" id="country-name" class="p-2 border border-green-900 rounded"
-                    placeholder="Enter country name">
-                <label for="country-location" class="font-semibold">Country Location:</label>
-                <input type="text" name="country_location" id="country-location"
-                    class="p-2 border border-green-900 rounded " placeholder="Enter country location">
-                <label for="country-population" class="font-semibold">Country Population :</label>
-                <input type="number" name="country_population" id="country-population"
-                    class="p-2 border border-green-900 rounded" placeholder="Enter population">
-                <label for="key-cities" class="font-semibold">Key Cities:</label>
-                <input type="text" name="key_cities" id="key-cities" class="p-2 border border-green-900 rounded"
-                    placeholder="Enter key cities">
-                <label for="country-languages" class="font-semibold">Country Languages:</label>
-                <input type="text" name="country_languages" id="country-languages"
-                    class="p-2 border border-green-900 rounded" placeholder="Enter languages">
-                <label for="country-img" class="font-semibold">Country Image URL:</label>
-                <input type="text" name="country_img" id="country-img" class="p-2 border border-green-900 rounded"
+
+            <label for="continent-name" class="font-semibold">Continent Name:</label>
+    <select name="continent-name" id="continent-name-name" class="p-2 border border-green-900 rounded">
+        <option value="Asie">Asie</option>
+        <option value="Afrique">Afrique</option>
+        <option value="Amérique">Amérique</option>
+        <option value="Antarctique">Antarctique</option>
+        <option value="Europe">Europe</option>
+        <option value="Australie">Australie</option>
+    </select>
+                
+                <label for="continent-description" class="font-semibold">Continent Description:</label>
+                <textarea type="text" name="continent-description" id="continent-description"
+                    class="p-2 border border-green-900 rounded " placeholder="Enter Continent Description"></textarea>
+                <label for="Continent-img" class="font-semibold">Continent Image URL:</label>
+                <input type="text" name="Continent-img" id="Continent-img" class="p-2 border border-green-900 rounded"
                     placeholder="Enter image URL">
                 <button href="index.php?" type="submit" name="submit"
                     class="mt-4 bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black border-black transform duration-300">Add
-                    Country</button>
+                    Continent</button>
             </form>
         </section>
     </section>
