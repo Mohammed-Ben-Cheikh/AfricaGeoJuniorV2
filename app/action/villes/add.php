@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFRINOVA</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../public/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +18,8 @@
     <!-- FIRST SECTION -->
     <section class="landingPage h-auto pt-6 flex flex-col items-center">
         <div class="flex rounded-3xl w-[85%]  justify-around gap-24 items-center py-3 px-4 md:px-24 bg-white">
-            <a href="/AFRINOVA_PROJECT"><img class="w-[160px]"
-                    src="./img/Black White Stylish Minimalist Small World Logo.png" alt="logo"></a>
+            <a href="#"><img class="w-[160px]"
+                    src="../../../public/img/Black White Stylish Minimalist Small World Logo.png" alt="logo"></a>
             <div class="flex gap-12 items-center">
                 <a class=" bg-black text-white border-2 hover:bg-white hover:border-2 hover:text-black py-1 px-4 rounded-md transform duration-300"
                     href="">Home</a>
@@ -64,7 +64,7 @@
     <footer class="bg-slate-100">
         <div class="container flex justify-around items-center p-8 flex-col md:flex-row">
             <div class="bg-white p-4 flex flex-col items-center">
-                <img class="w-40 pb-2 " src="./img/Black White Stylish Minimalist Small World Logo.png" alt="logo" />
+                <img class="w-40 pb-2 " src="../../../public/img/Black White Stylish Minimalist Small World Logo.png" alt="logo" />
                 <p class="text-xs w-32 text-center text-black">Thank you for visiting our website! We appreciate your
                     time and support. If you have any questions or feedback, feel free to reach out. We look forward to
                     having you back soon!</p>
