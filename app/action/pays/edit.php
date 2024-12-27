@@ -23,8 +23,8 @@ if (isset($_POST['submit'])) {
         $id_continent_fk
     );
 
-    if ($pays->update()) {
-        header('Location: ../../../index.php?success=2');
+    if ($pays->create()) {
+        header('Location: ../../../Dashboard/page/countrys.php?id=' . $id_continent_fk);
         exit();
     }
 }

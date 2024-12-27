@@ -24,7 +24,7 @@ $continents = continents::getAll();
     <!-- FIRST SECTION -->
     <section class="landingPage h-[530px] pt-6 flex flex-col items-center">
         <div class="flex rounded-3xl w-[85%]  justify-around gap-24 items-center py-3 px-4 md:px-24 bg-white">
-            <a href="/TEST2"><img class="w-[160px]" src="../public//img/Black White Stylish Minimalist Small World Logo.png"
+            <a href=""><img class="w-[160px]" src="../public//img/Black White Stylish Minimalist Small World Logo.png"
                     alt="logo"></a>
             <div class="flex gap-12 items-center">
                 <a class=" bg-black text-white border-2 hover:bg-white hover:border-2 hover:text-black py-1 px-4 rounded-md transform duration-300"
@@ -98,7 +98,7 @@ $continents = continents::getAll();
                                     <?php echo htmlspecialchars($continent['c_description']); ?>
                                 </p>
                                 <a class="text-xs font-normal flex justify-end hover:text-gray-200"
-                                    href="cities.php?continent_id=<?php echo $continent['id_Continent']; ?>">
+                                    href="./page/countrys.php?id=<?php echo $continent['id_Continent']; ?>">
                                     Explore more
                                 </a>
                             </div>

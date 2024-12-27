@@ -12,7 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id_user'];
         $_SESSION['user_type'] = $user['type'];
-        header('Location: ../index.php');
+        if($user['type'] == "admin" ){
+            header('Location: ../Dashboard');
+        }else if ($user['type'] == "user"){
+            header('Location: ../public/home.php');
+        }
+       
         exit();
     } else {
         $error = 'Email ou mot de passe incorrect';

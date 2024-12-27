@@ -22,23 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $result = $ville->update();
 
     if ($result) {
-        header('Location: ../../../index.php?success=update');
+        header('Location: ../../../Dashboard/page/cities.php?id=' . $id_pays_fk);
         exit;
-    } else {
-        header('Location: ../../../index.php?error=update');
-        exit;
-    }
+    } 
 }
 
 // Récupérer les données de la ville
 $ville_data = Villes::getById($id_ville);
 // Récupérer la liste des pays
 $pays = Pays::getAll();
-
-if (!$ville_data) {
-    header('Location: ../../../index.php?error=not_found');
-    exit;
-}
 ?>
 
 <!DOCTYPE html>

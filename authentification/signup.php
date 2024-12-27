@@ -18,9 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = new User(null, $email, $hashed_password);
         $id = $user->create();
         if ($id) {
-            $_SESSION['user_id'] = $id;
-            $_SESSION['user_type'] = 'user';
-            header('Location: ../index.php');
+            header('Location: ./login.php');
             exit();
         }
     }

@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     );
 
     if ($pays->create()) {
-        header('Location: ../../../index.php?success=1');
+        header('Location: ../../../Dashboard/page/countrys.php?id=' . $_GET['id']);
         exit();
     }
 }

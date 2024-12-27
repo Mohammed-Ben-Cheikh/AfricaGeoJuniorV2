@@ -34,8 +34,8 @@ $ville = villes::getByVille($_GET['id']);
 <body>
     <section class="bg-[url('<?php echo htmlspecialchars($Pays['img_pays']); ?>')] pt-6 flex flex-col items-center h-[350px]">
         <div class="flex rounded-3xl w-[85%]  justify-around gap-24 items-center py-3 px-4 md:px-24 bg-white">
-            <a href="/TEST2"><img class="w-[160px]"
-                    src="../public/img/Black White Stylish Minimalist Small World Logo.png" alt="logo"></a>
+            <a href="#"><img class="w-[160px]"
+                    src="../../public/img/Black White Stylish Minimalist Small World Logo.png" alt="logo"></a>
             <div class="flex gap-12 items-center">
                 <a class=" bg-black text-white border-2 hover:bg-white hover:border-2 hover:text-black py-1 px-4 rounded-md transform duration-300"
                     href="">Home</a>
@@ -96,7 +96,7 @@ $ville = villes::getByVille($_GET['id']);
     <footer class="bg-slate-100">
         <div class="container flex justify-around items-center p-8 flex-col md:flex-row">
             <div class="bg-white p-4 flex flex-col items-center">
-                <img class="w-40 pb-2 " src="../public/img/Black White Stylish Minimalist Small World Logo.png"
+                <img class="w-40 pb-2 " src="../../public/img/Black White Stylish Minimalist Small World Logo.png"
                     alt="logo" />
                 <p class="text-xs w-32 text-center text-black">Thank you for visiting our website! We appreciate your
                     time and support. If you have any questions or feedback, feel free to reach out. We look forward to
