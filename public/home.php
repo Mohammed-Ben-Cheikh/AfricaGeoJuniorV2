@@ -89,7 +89,7 @@ $continents = continents::getAll();
                                 src="<?php echo htmlspecialchars($continent['img_continent']); ?>"
                                 alt="<?php echo htmlspecialchars($continent['nom']); ?>">
                             <div
-                                class="absolute bottom-0 w-full h-[100px] text-white text-xl font-bold bg-black/30 rounded-b-lg px-4">
+                                class="absolute bottom-0 w-full h-[100px] text-white   text-xl font-bold bg-black/30 rounded-b-lg px-4">
                                 <div class="flex justify-between">
                                     <h1><?php echo htmlspecialchars($continent['nom']); ?></h1>
                                   
