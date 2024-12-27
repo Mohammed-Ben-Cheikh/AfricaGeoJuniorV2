@@ -24,6 +24,14 @@ class Database
             $this->error = $e->getMessage();
             echo $this->error;
         }
+
+        return $this->conn;
+    }
+
+    public function disconnect() {
+
+        $this->conn = null;
+
     }
 }
 
