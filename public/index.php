@@ -35,7 +35,7 @@
                 stunning landscapes and vibrant cultures to awe-inspiring wildlife, every moment is unforgettable.
                 Whether you’re on a thrilling safari or discovering hidden gems .</p>
             <div class="mt-8">
-                <a href="#"
+                <a href="../authentification/signup.php"
                     class="text-white text-lg border-2 rounded-3xl py-1 px-8 hover:text-green-950 hover:bg-white hover:border-white transform duration-300 drop-shadow-2xl ">Travel
                     the world!<i class="ri-skip-down-line ml-4"></i></a>
             </div>
