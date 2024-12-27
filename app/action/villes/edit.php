@@ -1,3 +1,46 @@
+<?php
+require_once '../../model/Ville.php';
+require_once '../../model/Pays.php';
+
+// Récupérer l'ID de la ville à éditer
+$id_ville = isset($_GET['id']) ? $_GET['id'] : null;
+
+if (!$id_ville) {
+    header('Location: ../../../index.php?error=no_id');
+    exit;
+}
+
+// Traitement du formulaire de mise à jour
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+    $nom = $_POST['city-name'];
+    $description = $_POST['city-description'];
+    $type = $_POST['city-type'];
+    $img_ville = $_POST['city-img'];
+    $id_pays_fk = $_POST['id_pays'];
+
+    $ville = new Villes($id_ville, $nom, $description, $type, $img_ville, $id_pays_fk);
+    $result = $ville->update();
+
+    if ($result) {
+        header('Location: ../../../index.php?success=update');
+        exit;
+    } else {
+        header('Location: ../../../index.php?error=update');
+        exit;
+    }
+}
+
+// Récupérer les données de la ville
+$ville_data = Villes::getById($id_ville);
+// Récupérer la liste des pays
+$pays = Pays::getAll();
+
+if (!$ville_data) {
+    header('Location: ../../../index.php?error=not_found');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -35,30 +78,39 @@
         </div>
         <h1 class="font-bold text-white  text-2xl py-4 text-center mt-4 mb-4 ">Edit Information</h1>
         <section class="pb-20 ">
-            <form class="flex flex-col gap-4  mx-auto w-full md:w-[800px] bg-gray-50 p-8  rounded shadow" method="POST">
-                <label for="city-name" class="font-semibold">City Name:</label>
+            <form class="flex flex-col gap-4 mx-auto w-full md:w-[800px] bg-gray-50 p-8 rounded shadow" method="POST">
+                <label for="city-name" class="font-semibold">Nom de la ville:</label>
                 <input type="text" name="city-name" id="city-name" class="p-2 border border-green-900 rounded"
-                    placeholder="Enter City name">
-                <label for="city-description" class="font-semibold">City Description:</label>
-                <input type="text" name="city-description" id="city-description"
-                    class="p-2 border border-green-900 rounded " placeholder="Enter city description">
+                    value="<?php echo htmlspecialchars($ville_data['nom']); ?>" required>
 
+                <label for="city-description" class="font-semibold">Description:</label>
+                <input type="text" name="city-description" id="city-description" class="p-2 border border-green-900 rounded"
+                    value="<?php echo htmlspecialchars($ville_data['v_description']); ?>" required>
 
-                    <label for="city-type" class="font-semibold">City Type:</label>
-    <select name="city-type" id="city-type" class="p-2 border border-green-900 rounded">
-    <option value="Type">Select Type</option>
-        <option value="capitale">Capitale</option>
-        <option value="autre">Autre</option>
-    </select>
+                <label for="city-type" class="font-semibold">Type:</label>
+                <select name="city-type" id="city-type" class="p-2 border border-green-900 rounded" required>
+                    <option value="capitale" <?php echo $ville_data['type'] === 'capitale' ? 'selected' : ''; ?>>Capitale</option>
+                    <option value="autre" <?php echo $ville_data['type'] === 'autre' ? 'selected' : ''; ?>>Autre</option>
+                </select>
 
-              
-    
-                <label for="city-img" class="font-semibold">city Image URL:</label>
+                <label for="id_pays" class="font-semibold">Pays:</label>
+                <select name="id_pays" id="id_pays" class="p-2 border border-green-900 rounded" required>
+                    <?php foreach ($pays as $p): ?>
+                        <option value="<?php echo $p['id_pays']; ?>" 
+                            <?php echo $p['id_pays'] === $ville_data['id_pays_fk'] ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($p['nom']); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+
+                <label for="city-img" class="font-semibold">URL de l'image:</label>
                 <input type="text" name="city-img" id="city-img" class="p-2 border border-green-900 rounded"
-                    placeholder="Enter image URL">
-                <button href="index.php?" type="submit" name="submit"
-                    class="mt-4 bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black border-black transform duration-300">Edit
-                    City</button>
+                    value="<?php echo htmlspecialchars($ville_data['img_ville']); ?>" required>
+
+                <button type="submit" name="submit" 
+                    class="mt-4 bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black border-black transform duration-300">
+                    Mettre à jour la ville
+                </button>
             </form>
         </section>
     </section>
@@ -66,7 +118,8 @@
     <footer class="bg-slate-100">
         <div class="container flex justify-around items-center p-8 flex-col md:flex-row">
             <div class="bg-white p-4 flex flex-col items-center">
-                <img class="w-40 pb-2 " src="../../../public/img/Black White Stylish Minimalist Small World Logo.png" alt="logo" />
+                <img class="w-40 pb-2 " src="../../../public/img/Black White Stylish Minimalist Small World Logo.png"
+                    alt="logo" />
                 <p class="text-xs w-32 text-center text-black">Thank you for visiting our website! We appreciate your
                     time and support. If you have any questions or feedback, feel free to reach out. We look forward to
                     having you back soon!</p>
