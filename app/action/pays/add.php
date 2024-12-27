@@ -68,9 +68,15 @@ if (isset($_POST['submit'])) {
                 <label for="country-name" class="font-semibold">Country Name:</label>
                 <input type="text" name="country_name" id="country-name" class="p-2 border border-green-900 rounded"
                     placeholder="Enter country name">
-                <label for="country-location" class="font-semibold">Country Location:</label>
-                <input type="text" name="country_location" id="country-location"
-                    class="p-2 border border-green-900 rounded " placeholder="Enter country location">
+                    <label for="country_location" class="font-semibold">Continent Name:</label>
+    <select name="country_location" id="country_location" class="p-2 border border-green-900 rounded">
+        <option value="Asie">Asie</option>
+        <option value="Afrique">Afrique</option>
+        <option value="Amérique">Amérique</option>
+        <option value="Antarctique">Antarctique</option>
+        <option value="Europe">Europe</option>
+        <option value="Australie">Australie</option>
+    </select>
                 <label for="country-population" class="font-semibold">Country Population :</label>
                 <input type="number" name="country_population" id="country-population"
                     class="p-2 border border-green-900 rounded" placeholder="Enter population">
