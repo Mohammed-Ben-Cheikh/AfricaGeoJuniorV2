@@ -105,7 +105,7 @@ $continents = continents::getAll();
                                             <i
                                                 class="ri-edit-fill text-sm text-slate-200 hover:text-green-900 transform duration-300"></i>
                                         </a>
-                                        <a href="delete-continent.php?id=<?php echo $continent['id_Continent']; ?>"
+                                        <a href="../app/action/continents/delete.php?id=<?php echo $continent['id_Continent']; ?>"
                                             onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce continent ?');">
                                             <i
                                                 class="ri-delete-bin-7-fill text-sm text-slate-200 hover:text-green-900 transform duration-300"></i>

@@ -110,7 +110,7 @@ if (!$continent_data) {
                     time and support. If you have any questions or feedback, feel free to reach out. We look forward to
                     having you back soon!</p>
             </div>
-            <div class="flex gap-28 text-black md:flex-row"></div></div>
+            <div class="flex gap-28 text-black md:flex-row"></div>
                 <div class="mb-4">
                     <h1 class="text-xl font-medium pb-2">Quick Links</h1>
                     <ul>
@@ -126,9 +126,9 @@ if (!$continent_data) {
                                 href="#">Team</a></li>
                     </ul>
                 </div>
-                <div class="mb-4"></div>
+                <div class="mb-4">
                     <h1 class="text-xl font-medium pb-2">Social Media</h1>
-                    <ul></ul>
+                    <ul>
                         <li class="pb-1 hover:underline transition-all duration-400 hover:cursor-pointer"><i
                                 class="fa-brands fa-facebook pr-2"></i><a href="#">Facebook</a></li>
                         <a href="#"></a>
