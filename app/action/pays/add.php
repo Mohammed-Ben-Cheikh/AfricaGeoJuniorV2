@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $langues_officielles = $_POST['country_languages'];
     $p_description = $_POST['p_description'];
     $img_pays = $_POST['country_img'];
-    $id_continent_fk = 1; // À adapter selon votre logique
+    $id_continent_fk = $_GET['id']; // À adapter selon votre logique
 
     $pays = new Pays(
         null,
@@ -80,8 +80,8 @@ if (isset($_POST['submit'])) {
                 <label for="country-population" class="font-semibold">Country Population :</label>
                 <input type="number" name="country_population" id="country-population"
                     class="p-2 border border-green-900 rounded" placeholder="Enter population">
-                <label for="key-cities" class="font-semibold">Country description :</label>
-                <textarea type="text" name="key_cities" id="key-cities" class="p-2 border border-green-900 rounded"
+                <label for="p_description" class="font-semibold">Country description :</label>
+                <textarea type="text" name="p_description" id="p_description" class="p-2 border border-green-900 rounded"
                     placeholder="Enter key cities"></textarea>
                 <label for="country-languages" class="font-semibold">Country Languages:</label>
                 <input type="text" name="country_languages" id="country-languages"

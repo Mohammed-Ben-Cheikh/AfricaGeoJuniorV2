@@ -24,7 +24,7 @@ class Database
             $this->error = $e->getMessage();
             echo $this->error;
         }
-
+        
         return $this->conn;
     }
 
