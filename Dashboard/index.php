@@ -9,7 +9,7 @@ $continents = continents::getAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WORLDY</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@ $continents = continents::getAll();
     <!-- FIRST SECTION -->
     <section class="landingPage h-[530px] pt-6 flex flex-col items-center">
         <div class="flex rounded-3xl w-[85%]  justify-around gap-24 items-center py-3 px-4 md:px-24 bg-white">
-            <a href="/TEST2"><img class="w-[160px]" src="./img/Black White Stylish Minimalist Small World Logo.png"
+            <a href="/TEST2"><img class="w-[160px]" src="../public//img/Black White Stylish Minimalist Small World Logo.png"
                     alt="logo"></a>
             <div class="flex gap-12 items-center">
                 <a class=" bg-black text-white border-2 hover:bg-white hover:border-2 hover:text-black py-1 px-4 rounded-md transform duration-300"
@@ -70,7 +70,7 @@ $continents = continents::getAll();
                 <p class=" md:w-[400px]  "><span class="font-semibold">Cultural Diversity:</span> Africa is home to over
                     2,000 languages and countless traditions.</p>
             </div>
-            <img class="w-[230px] md:w-[500px] mt-4 flex self-center " src="./img/earth.png" alt="">
+            <img class="w-[230px] md:w-[500px] mt-4 flex self-center " src="../public//img/earth.png" alt="">
         </div>
     </section>
     <!-- COUNTRIES SECTION -->
@@ -81,7 +81,7 @@ $continents = continents::getAll();
                     <h1 class="bg-slate-100/15 text-white px-2 ml-16 py-1">Continents :</h1>
                 </div>
                 <div>
-                    <a href="countries-form.php"
+                    <a href="../app/action/continents/add.php"
                         class="text-white text-sm border-2  px-2 py-1 hover:text-green-950 hover:bg-white hover:border-white transform duration-300 drop-shadow-2xl ">Add
                         Continents <i class="ri-add-line"></i></a>
                 </div>
@@ -101,7 +101,7 @@ $continents = continents::getAll();
                                 <div class="flex justify-between">
                                     <h1><?php echo htmlspecialchars($continent['nom']); ?></h1>
                                     <div>
-                                        <a href="edit-continent.php?id=<?php echo $continent['id_Continent']; ?>">
+                                        <a href="../app/action/continents/edit.php?id=<?php echo $continent['id_Continent']; ?>">
                                             <i
                                                 class="ri-edit-fill text-sm text-slate-200 hover:text-green-900 transform duration-300"></i>
                                         </a>
@@ -130,7 +130,7 @@ $continents = continents::getAll();
     <footer class="bg-slate-100">
         <div class="container flex justify-around items-center p-8 flex-col md:flex-row">
             <div class="bg-white p-4 flex flex-col items-center">
-                <img class="w-40 pb-2 " src="./img/Black White Stylish Minimalist Small World Logo.png" alt="logo" />
+                <img class="w-40 pb-2 " src="../public/img/Black White Stylish Minimalist Small World Logo.png" alt="logo" />
                 <p class="text-xs w-32 text-center text-black">Thank you for visiting our website! We appreciate your
                     time and support. If you have any questions or feedback, feel free to reach out. We look forward to
                     having you back soon!</p>
