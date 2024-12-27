@@ -1,0 +1,50 @@
+*{
+    font-family: "Oswald", sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+.landingPage{
+    background-image: url("./img/background-1.jpg") ;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.landingPages{
+    background-image: url("./img/background-1 - Copie.jpg") ;
+    background-size: cover;
+    background-position: center;
+   
+    
+}
+
+
+::-webkit-scrollbar {
+    width: 4px; 
+  
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+/* Scrollbar thumb (the part that moves) */
+::-webkit-scrollbar-thumb {
+    background: #1c1b1b; /* Gray color for the thumb */
+    border-radius: 10px;
+}
+    
+/* Scrollbar thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker gray when hovered */
+}
+
+/* Scrollbar corner (where the vertical and horizontal scrollbars meet) */
+::-webkit-scrollbar-corner {
+    background: #f1f1f1;
+}
+

@@ -1,0 +1,1 @@
+// script.js - Exemple de script\n\ndocument.addEventListener("DOMContentLoaded", function() {\n    console.log("Le document est prêt !");\n});
