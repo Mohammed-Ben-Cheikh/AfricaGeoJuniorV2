@@ -116,7 +116,7 @@ $continents = continents::getAll();
                                     <?php echo htmlspecialchars($continent['c_description']); ?>
                                 </p>
                                 <a class="text-xs font-normal flex justify-end hover:text-gray-200"
-                                    href="cities.php?continent_id=<?php echo $continent['id_Continent']; ?>">
+                                    href="./page/countrys.php?id=<?php echo $continent['id_Continent']; ?>">
                                     Explore more
                                 </a>
                             </div>
