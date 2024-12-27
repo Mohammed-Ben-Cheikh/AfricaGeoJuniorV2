@@ -75,15 +75,15 @@ $pays = Pays::getByCountry($_GET['id']);
                             <h1 class=" text-lg font-semibold pb-2"><?php echo htmlspecialchars($country['nom']); ?>
                             </h1>
                             <div>
-                                <a href="#"><i
+                                <a href="../../app/action/pays/edit.php?id=<?php echo htmlspecialchars($country['id_pays']); ?>"><i
                                         class="ri-edit-fill text-sm text-black  hover:text-green-900 transform duration-300"></i></a>
-                                <a href="#"><i
+                                <a href="../../app/action/pays/delete.php?id=<?php echo htmlspecialchars($country['id_pays']); ?>"><i
                                         class="ri-delete-bin-7-fill text-sm text-black  hover:text-green-900 transform duration-300"></i></a>
                             </div>
                         </div>
                         <P class="text-lg pb-4 md:w-[600px]"><?php echo htmlspecialchars($country['p_description']); ?>
                         </P>
-                        <a href="cities.php?country_id=<?php echo $country['id_pays']; ?>"
+                        <a href="cities.php?id=<?php echo $country['id_pays']; ?>"
                             class="block text-center bg-black text-white py-2 px-4 hover:bg-white hover:text-black border-2 border-black transition duration-300">
                             Explore cities
                         </a>

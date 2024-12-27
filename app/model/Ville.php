@@ -62,6 +62,17 @@ class villes
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public static function getByVille($id)
+    {
+        $database = new Database();
+        $db = $database->connect();
+        $sql = "SELECT * FROM villes WHERE id_pays_fk = ?";
+        $stmt = $db->prepare($sql);
+        $stmt->execute([$id]);
+        $database->disconnect();
+        return $stmt;
+    }
+
     // Update - Mettre à jour une ville
     public function update()
     {
