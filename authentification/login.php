@@ -28,11 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Connexion - AfricaGeoJunior</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-[url('../public/img/background-1-Copie.jpg')] bg-cover bg-center">
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <h2 class="text-center text-3xl font-bold text-gray-900 mb-8">Connexion</h2>
+            <div class="bg-gradient-to-t from-blue-500/30 to-black border-b-2 p-8 rounded-lg shadow-md">
+                <h2 class="text-center text-3xl font-bold text-white mb-8">Connexion</h2>
                 
                 <?php if ($error): ?>
                     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
@@ -42,12 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <form method="POST" class="space-y-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Email:</label>
+                        <label class="block text-sm font-medium text-white">Email:</label>
                         <input type="email" name="email" required 
                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Mot de passe:</label>
+                        <label class="block text-sm font-medium text-white">Mot de passe:</label>
                         <input type="password" name="password" required 
                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
@@ -56,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         Se connecter
                     </button>
                 </form>
-                <p class="mt-4 text-center text-sm text-gray-600">
+                <p class="mt-4 text-center text-sm text-white">
                     Pas encore de compte? 
-                    <a href="signup.php" class="font-medium text-indigo-600 hover:text-indigo-500">S'inscrire</a>
+                    <a href="signup.php" class="font-medium text-white hover:text-black">S'inscrire</a>
                 </p>
             </div>
         </div>
