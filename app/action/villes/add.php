@@ -1,3 +1,30 @@
+<?php
+require_once '../../model/Ville.php';
+require_once '../../model/Pays.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+    $nom = $_POST['city-name'];
+    $description = $_POST['city-description'];
+    $type = $_POST['city-type'];
+    $img_ville = $_POST['city-img'];
+    $id_pays_fk = $_POST['id_pays']; // Assurez-vous d'ajouter ce champ dans le formulaire
+
+    $ville = new Villes(null, $nom, $description, $type, $img_ville, $id_pays_fk);
+    $result = $ville->create();
+
+    if ($result) {
+        header('Location: ../../../index.php?success=1');
+        exit;
+    } else {
+        header('Location: ../../../index.php?error=1');
+        exit;
+    }
+}
+
+// Récupérer la liste des pays pour le dropdown
+$pays = Pays::getAll();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -44,14 +71,21 @@
                     class="p-2 border border-green-900 rounded " placeholder="Enter city description">
 
 
-                    <label for="city-type" class="font-semibold">City Type:</label>
-    <select name="city-type" id="city-type" class="p-2 border border-green-900 rounded">
-    <option value="Type">Select Type</option>
-        <option value="capitale">Capitale</option>
-        <option value="autre">Autre</option>
-    </select>
+                <label for="city-type" class="font-semibold">City Type:</label>
+                <select name="city-type" id="city-type" class="p-2 border border-green-900 rounded">
+                    <option value="Type">Select Type</option>
+                    <option value="capitale">Capitale</option>
+                    <option value="autre">Autre</option>
+                </select>
 
-    
+                <label for="id_pays" class="font-semibold">Pays:</label>
+                <select name="id_pays" id="id_pays" class="p-2 border border-green-900 rounded" required>
+                    <option value="">Sélectionner un pays</option>
+                    <?php foreach ($pays as $p): ?>
+                        <option value="<?php echo $p['id_pays']; ?>"><?php echo $p['nom']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+
                 <label for="city-img" class="font-semibold">city Image URL:</label>
                 <input type="text" name="city-img" id="city-img" class="p-2 border border-green-900 rounded"
                     placeholder="Enter image URL">
@@ -65,7 +99,8 @@
     <footer class="bg-slate-100">
         <div class="container flex justify-around items-center p-8 flex-col md:flex-row">
             <div class="bg-white p-4 flex flex-col items-center">
-                <img class="w-40 pb-2 " src="../../../public/img/Black White Stylish Minimalist Small World Logo.png" alt="logo" />
+                <img class="w-40 pb-2 " src="../../../public/img/Black White Stylish Minimalist Small World Logo.png"
+                    alt="logo" />
                 <p class="text-xs w-32 text-center text-black">Thank you for visiting our website! We appreciate your
                     time and support. If you have any questions or feedback, feel free to reach out. We look forward to
                     having you back soon!</p>
