@@ -10,10 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $result = $continent->create();
 
     if ($result) {
-        header('Location: ../../../index.php?success=1');
-        exit;
-    } else {
-        header('Location: ../../../index.php?error=1');
+        header('Location: ../../../Dashboard/index.php');
         exit;
     }
 }
