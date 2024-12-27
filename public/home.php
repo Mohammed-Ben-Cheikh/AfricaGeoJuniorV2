@@ -1,3 +1,7 @@
+<?php
+require_once '../app/model/Continent.php';
+$continents = continents::getAll();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WORLDY</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +24,7 @@
     <!-- FIRST SECTION -->
     <section class="landingPage h-[530px] pt-6 flex flex-col items-center">
         <div class="flex rounded-3xl w-[85%]  justify-around gap-24 items-center py-3 px-4 md:px-24 bg-white">
-            <a href="/TEST2"><img class="w-[160px]" src="./img/Black White Stylish Minimalist Small World Logo.png"
+            <a href="/TEST2"><img class="w-[160px]" src="../public//img/Black White Stylish Minimalist Small World Logo.png"
                     alt="logo"></a>
             <div class="flex gap-12 items-center">
                 <a class=" bg-black text-white border-2 hover:bg-white hover:border-2 hover:text-black py-1 px-4 rounded-md transform duration-300"
@@ -66,81 +70,40 @@
                 <p class=" md:w-[400px]  "><span class="font-semibold">Cultural Diversity:</span> Africa is home to over
                     2,000 languages and countless traditions.</p>
             </div>
-            <img class="w-[230px] md:w-[500px] mt-4 flex self-center " src="./img/earth.png" alt="">
+            <img class="w-[230px] md:w-[500px] mt-4 flex self-center " src="../public//img/earth.png" alt="">
         </div>
     </section>
     <!-- COUNTRIES SECTION -->
     <section class=" landingPages">
-        <div class=" py-8  ">
-            <div class="flex items-center gap-4">
-                <div>
-                    <h1 class="bg-slate-100/15 text-white px-2 ml-16 py-1">Continents :</h1>
-                </div>
-                <div>
-                    <a href="countries-form.php"
-                        class="text-white text-sm border-2  px-2 py-1 hover:text-green-950 hover:bg-white hover:border-white transform duration-300 drop-shadow-2xl ">Add
-                        Continents <i class="ri-add-line"></i></a>
-                </div>
-            </div>
-            <P class="text-white font-light ml-16 pt-1 ">This is the best 3 Continents in the world :</P>
+        <div class=" py-8 flex justify-center flex-col items-center  ">
+         
+            <P class="text-white font-bold  pt-4 text-3xl">World Continents</P>
+            <P class="text-white font-light w-[75%] text-center  pt-2">Earth has seven continents: Africa, Antarctica, Asia, Europe, North America, Oceania, and South America. Each has unique landscapes and cultures, from Africa’s wildlife to Antarctica’s ice. Asia is the largest, Europe has rich history, North America is diverse, Oceania consists of islands, and South America is known for rainforests and mountains.</P>
         </div>
         <div class="">
-            <div class="pt-4 pb-16">
+            <div id="container" class="pt-4 pb-16">
                 <div class="flex justify-around flex-wrap gap-4 px-2">
-                    <div class="relative w-[400px] hover:bg-black/30">
-                        <img class="w-full rounded-lg" src="./img/africa.jpg" alt="africa">
-                        <div
-                            class="absolute bottom-0 w-full h-[100px] text-white text-xl font-bold bg-black/30 rounded-b-lg px-4">
-                            <div class="flex justify-between ">
-                                <h1>AFRICA</h1>
-                            </div>
-                            <p class="text-xs font-light">
-                                AFRICA, located in , has a population of million people.
-                                Its key cities include . The official languages are .
-                            </p>
-                            <a class="text-xs font-normal flex justify-end hover:text-gray-200" href="#">
-                                Explore more
-                            </a>
-                        </div>
-                    </div>
-                    <div class="relative w-[400px] hover:bg-black/30">
-                        <img class="w-full rounded-lg" src="./img/EUROPE.jpg" alt="africa">
-                        <div
-                            class="absolute bottom-0 w-full h-[100px] text-white text-xl font-bold bg-black/30 rounded-b-lg px-4">
-                            <div class="flex justify-between ">
-                                <h1>Europe</h1>
-                            </div>
-                            <p class="text-xs font-light">
-                                Europe, located in , has a population of million people.
-                                Its key cities include . The official languages are .
-                            </p>
-                            <a class="text-xs font-normal flex justify-end hover:text-gray-200" href="#">
-                                Explore more
-                            </a>
-                        </div>
-                    </div>
-                    <div class="relative w-[400px] hover:bg-black/30">
-                        <img class="w-full rounded-lg" src="./img/telj2.jpg" alt="africa">
-                        <div
-                            class="absolute bottom-0 w-full h-[100px] text-white text-xl font-bold bg-black/30 rounded-b-lg px-4">
-                            <div class="flex justify-between ">
-                                <h1>ANTARCTICA</h1>
-                                <div>
-                                    <a href="#"><i
-                                            class="ri-edit-fill text-sm text-slate-200 hover:text-green-900 transform duration-300"></i></a>
-                                    <a href="#"><i
-                                            class="ri-delete-bin-7-fill text-sm text-slate-200 hover:text-green-900 transform duration-300"></i></a>
+                    <?php foreach ($continents as $continent): ?>
+                        <div class="relative w-[400px] hover:bg-white/20 transform duration-300 cursor-pointer  ">
+                            <img class="w-full h-[250px] object-cover rounded-lg"
+                                src="<?php echo htmlspecialchars($continent['img_continent']); ?>"
+                                alt="<?php echo htmlspecialchars($continent['nom']); ?>">
+                            <div
+                                class="absolute bottom-0 w-full h-[100px] text-white text-xl font-bold bg-black/30 rounded-b-lg px-4">
+                                <div class="flex justify-between">
+                                    <h1><?php echo htmlspecialchars($continent['nom']); ?></h1>
+                                  
                                 </div>
+                                <p class="text-xs font-light">
+                                    <?php echo htmlspecialchars($continent['c_description']); ?>
+                                </p>
+                                <a class="text-xs font-normal flex justify-end hover:text-gray-200"
+                                    href="cities.php?continent_id=<?php echo $continent['id_Continent']; ?>">
+                                    Explore more
+                                </a>
                             </div>
-                            <p class="text-xs font-light">
-                                ANTARCTICA , located in , has a population of million people.
-                                Its key cities include . The official languages are .
-                            </p>
-                            <a class="text-xs font-normal flex justify-end hover:text-gray-200" href="cities.php">
-                                Explore more
-                            </a>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -149,7 +112,7 @@
     <footer class="bg-slate-100">
         <div class="container flex justify-around items-center p-8 flex-col md:flex-row">
             <div class="bg-white p-4 flex flex-col items-center">
-                <img class="w-40 pb-2 " src="./img/Black White Stylish Minimalist Small World Logo.png" alt="logo" />
+                <img class="w-40 pb-2 " src="../public/img/Black White Stylish Minimalist Small World Logo.png" alt="logo" />
                 <p class="text-xs w-32 text-center text-black">Thank you for visiting our website! We appreciate your
                     time and support. If you have any questions or feedback, feel free to reach out. We look forward to
                     having you back soon!</p>
